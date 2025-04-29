@@ -1,19 +1,25 @@
-name: Update Price
+name: Run Scraper
 on:
-  workflow_dispatch:  # Manual trigger only
+  workflow_dispatch:
   schedule:
-    - cron: '*/30 * * * *'  # Auto-run every 30 minutes
+    - cron: '0 */6 * * *'  # Runs every 6 hours
 
 jobs:
-  update:
+  run:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Run scraper
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Run script and save output
         run: |
-          python main.py > docs/price.txt
-          echo '<meta http-equiv="refresh" content="0; url=price.txt">' > docs/index.html
-      - name: Commit changes
+          mkdir -p docs
+          python main.py  # Your script handles writing to docs/price.txt
+      - name: Commit and push
         run: |
           git config --global user.name "GitHub Actions"
           git config --global user.email "actions@github.com"
