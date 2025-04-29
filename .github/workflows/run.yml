@@ -2,10 +2,6 @@ name: Run Scraper
 on:
   workflow_dispatch:
 
-permissions:
-  actions: read
-  contents: read
-
 jobs:
   run:
     runs-on: ubuntu-latest
@@ -17,5 +13,13 @@ jobs:
           python-version: '3.12'
       - name: Install dependencies
         run: pip install -r requirements.txt
-      - name: Run script
-        run: python main.py
+      - name: Run script & save output
+        run: |
+          python main.py > docs/output.txt  # Save output to docs folder
+      - name: Commit changes
+        run: |
+          git config --global user.name "GitHub Action"
+          git config --global user.email "action@github.com"
+          git add docs/output.txt
+          git commit -m "Update price" || echo "No changes"
+          git push
