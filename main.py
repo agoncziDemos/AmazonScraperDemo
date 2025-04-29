@@ -1,12 +1,14 @@
 import os
 import requests
 from bs4 import BeautifulSoup
-from dotenv import load_dotenv
+# from dotenv import load_dotenv
 
 # Load email credentials from .env file
-load_dotenv()
-EMAIL = os.getenv("GMAIL_USER")
-PASSWORD = os.getenv("GMAIL_APP_PASSWORD")
+# load_dotenv()
+# EMAIL = os.getenv("GMAIL_USER")
+# PASSWORD = os.getenv("GMAIL_APP_PASSWORD")
+EMAIL = ""
+PASSWORD = ""
 
 # Configure these before running
 PRODUCT_URL = "https://www.amazon.com/Quencher-Cupholder-Compatible-Insulated-Stainless/dp/B0DCDQ1RFV/"
