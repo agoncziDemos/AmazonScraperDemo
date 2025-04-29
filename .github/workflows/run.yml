@@ -2,11 +2,14 @@ name: Run Scraper
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 */6 * * *'  # Runs every 6 hours
+    - cron: '0 */6 * * *'
 
 jobs:
   run:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      
     steps:
       - uses: actions/checkout@v4
       - name: Set up Python
@@ -15,14 +18,14 @@ jobs:
           python-version: '3.12'
       - name: Install dependencies
         run: pip install -r requirements.txt
-      - name: Run script and save output
+      - name: Run and save output
         run: |
           mkdir -p docs
-          python main.py  # Your script handles writing to docs/price.txt
+          python main.py  # Your existing script that writes to docs/price.txt
       - name: Commit and push
         run: |
           git config --global user.name "GitHub Actions"
           git config --global user.email "actions@github.com"
           git add docs/
-          git commit -m "Update price" || exit 0
+          git commit -m "Update price [skip ci]" || exit 0
           git push
