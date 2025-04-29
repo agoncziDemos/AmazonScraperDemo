@@ -1,11 +1,5 @@
-HOW TO TEST THE DEMO:
-
-1. Go to the "Actions" tab
-2. Click "Run Scraper" in the workflow list (next to the green check mark)
-3. Click the circular arrow icon next to "run" on the left menu (this button might only appear when you hover over "run")
-4. Click the "Re-run jobs" button in the pop-up
-5. After the brown button appears next to run, click on "run" (either one)
-6. Expand the "Run script" step to see output
+View the live demo:  
+[Click here to check a price](https://agoncziDemos.github.io/AmazonScraperDemo/)
 
 It should look like:
 
