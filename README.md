@@ -11,9 +11,9 @@ This is a *minimal working prototype* that demonstrates the core logic of a larg
 This repo only shows the scraping core and basic output and serves only as a small Demo.
 
 View the live demo that returns the current price of a specific item on Amazon:  
-[Click here to check a price](https://agoncziDemos.github.io/AmazonScraperDemo/)
+https://agoncziDemos.github.io/AmazonScraperDemo/
 
-It should look like this:
+It should look like this, with the correct current price:
 
 Product: Stanley Quencher H2.0 Tumbler with Handle and Straw 40 oz | Flowstate 3-Position Lid | Cup Holder Compatible for Travel | Insulated Stainless Steel Cup | BPA-Free | Stargaze
 
