@@ -2,6 +2,10 @@ name: Run Scraper
 on:
   workflow_dispatch:
 
+permissions:
+  actions: read
+  contents: read
+
 jobs:
   run:
     runs-on: ubuntu-latest
@@ -12,7 +16,6 @@ jobs:
         with:
           python-version: '3.12'
       - name: Install dependencies
-        run: |
-          pip install -r requirements.txt
+        run: pip install -r requirements.txt
       - name: Run script
         run: python main.py
