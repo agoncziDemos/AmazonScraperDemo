@@ -28,6 +28,10 @@ def get_price():
 
         print(f"Product: {title}")
         print(f"Price: ${price:.2f}")
+
+        with open("docs/price.txt", "w") as f:
+            f.write(f"Product: {title}")
+            f.write(f"{title}\nPrice: ${price}")
     finally:
         driver.quit()
 
