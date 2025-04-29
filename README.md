@@ -10,6 +10,7 @@ HOW TO TEST THE DEMO:
 It should look like:
 
 Product: Stanley Quencher H2.0 Tumbler with Handle and Straw 40 oz | Flowstate 3-Position Lid | Cup Holder Compatible for Travel | Insulated Stainless Steel Cup | BPA-Free | Stargaze
+
 Price: $35.99
 
 To check the actual product being tracked go to:
