@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Stanley Cup Price Tracker</title>
+    <meta http-equiv="refresh" content="30">  <!-- Auto-refresh every 30s -->
+</head>
+<body>
+    <h1>Latest Price:</h1>
+    <pre id="price"></pre>
+    <script>
+        // Fetch latest output
+        fetch('https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/docs/output.txt')
+            .then(response => response.text())
+            .then(text => {
+                document.getElementById('price').textContent = text;
+            });
+    </script>
+</body>
+</html>
