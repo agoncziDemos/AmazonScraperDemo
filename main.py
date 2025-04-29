@@ -32,6 +32,8 @@ def get_price():
         with open("docs/price.txt", "w") as f:
             f.write(f"Product: {title}")
             f.write(f"{title}\nPrice: ${price}")
+            print("")
+            print("Done creating price file!")
     finally:
         driver.quit()
 
