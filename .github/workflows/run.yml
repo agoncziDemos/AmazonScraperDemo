@@ -1,11 +1,13 @@
-mkdir -p .github/workflows
-echo 'name: Run Scraper
+name: Run Scraper
 on:
   schedule:
-    - cron: "0 12 * * *"
+    - cron: '0 12 * * *'  # Daily at 12PM UTC
+  workflow_dispatch:       # Manual trigger
+
 jobs:
   run:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: python main.py' > .github/workflows/run.yml
+      - name: Run script
+        run: python main.py
