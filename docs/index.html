@@ -9,7 +9,7 @@
     <pre id="price"></pre>
     <script>
         // Fetch latest output
-        fetch('https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/docs/output.txt')
+        fetch('https://raw.githubusercontent.com/agoncziDemos/AmazonScraperDemo/main/docs/output.txt')
             .then(response => response.text())
             .then(text => {
                 document.getElementById('price').textContent = text;
