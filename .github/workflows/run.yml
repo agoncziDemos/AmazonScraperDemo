@@ -1,13 +1,15 @@
 name: Run Scraper
 on:
   schedule:
-    - cron: '0 12 * * *'  # Daily at 12PM UTC
-  workflow_dispatch:       # Manual trigger
+    - cron: '0 12 * * *'
+  workflow_dispatch:
 
 jobs:
   run:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Install dependencies
+        run: pip install -r requirements.txt
       - name: Run script
         run: python main.py
