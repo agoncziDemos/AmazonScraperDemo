@@ -8,7 +8,7 @@ This is a *minimal working prototype* that demonstrates the core logic of a larg
 - Serverless deployment via AWS Lambda
 - Saving data automatically at given time intervals
 
-This repo only shows the scraping core and basic output and serves only as a small Demo.
+This repo only shows the scraping core and basic output and serves only as a small Demo. It automatically updates the price of the item every 6 hours.
 
 View the live demo that returns the current price of a specific item on Amazon:  
 https://agoncziDemos.github.io/AmazonScraperDemo/
