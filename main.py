@@ -17,7 +17,12 @@ def get_price():
         soup = BeautifulSoup(driver.page_source, "html.parser")
 
         # Get product title
-        title = soup.find("span", id="productTitle").text.strip()
+        productTitle = soup.find("span", id="productTitle")
+        if productTitle is not None:
+            title = productTitle.text.strip()
+        else:
+            print("Failed to fetch product!")
+            return
 
         # Get price
         price_whole = soup.find("span", class_="a-price-whole").text.split('.')[0]
